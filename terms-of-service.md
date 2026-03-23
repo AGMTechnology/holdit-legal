@@ -190,7 +190,7 @@ We may update these Terms from time to time. We will notify you of significant c
 
 ## 15. Governing Law
 
-These Terms are governed by and construed in accordance with the laws of [YOUR_JURISDICTION]. Any disputes arising from these Terms or your use of HoldIt shall be resolved in the courts of [YOUR_JURISDICTION].
+These Terms are governed by and construed in accordance with the laws of France / EU. Any disputes arising from these Terms or your use of HoldIt shall be resolved in the courts of France / EU.
 
 ---
 
@@ -198,8 +198,7 @@ These Terms are governed by and construed in accordance with the laws of [YOUR_J
 
 If you have questions about these Terms of Service, contact us at:
 
-**Email:** [YOUR_EMAIL_HERE]
-**Website:** [YOUR_WEBSITE_HERE]
+**Email:** ahmed.agoummadane@gmail.com
 
 ---
 
