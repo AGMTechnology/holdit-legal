@@ -21,15 +21,31 @@ By using HoldIt, you agree to the collection and use of information as described
 
 ## 2. Information We Collect
 
-### 2.1 Camera Data (On-Device Only)
+### 2.1 Camera and Face Detection
 
-HoldIt uses your device's front-facing camera to detect facial expressions (smiling, laughing) during gameplay. **This is the core gameplay mechanic.**
+HoldIt uses your device's front-facing camera solely during active gameplay to detect facial expressions (smiling and laughing). All face detection processing occurs entirely on your device. No photos, videos, or biometric data are ever captured, stored, transmitted, or shared. The camera feed is analyzed in real-time to produce a simple numerical smile probability score, which exists only in temporary memory and is discarded immediately after each gameplay session.
 
-**Important:**
-- All face detection and reaction analysis happens **entirely on your device**
-- Camera frames are processed in real-time and **never recorded, stored, or transmitted** to our servers
-- We do **not** collect, store, or share any biometric data, facial recognition data, or images of your face
-- The only data sent to our servers from gameplay is a coarse outcome label: "held," "smiled," or "laughed" — never images or video
+**What face data is collected:**
+- A smiling probability score (a number from 0.0 to 1.0) computed on-device from each camera frame
+- A face-detected boolean (true/false) indicating whether a face is visible
+
+**How face data is used:**
+- The smiling probability score determines if the player is smiling or laughing during gameplay. If the score exceeds a threshold, the player loses a life.
+- The face-detected boolean pauses the game when no face is visible.
+
+**Face data storage and retention:**
+- Face data is **never stored** on disk, in databases, or in any persistent storage
+- Face data exists **only in volatile device memory (RAM)** during active gameplay
+- Face data is **discarded immediately** when the gameplay round ends or the app is closed
+- No face data is **ever transmitted** over the network or shared with any third party
+
+**Face data and third parties:**
+- Face data is **never shared** with any third party, including our own servers
+- All face processing uses on-device frameworks (Apple Vision/Google ML Kit) with no cloud processing
+
+**Technical implementation:**
+- Face detection is powered by the device's native machine learning frameworks (Apple Vision framework on iOS, Google ML Kit on Android) via react-native-vision-camera
+- Only two numerical values (smile probability and face-detected boolean) are produced — no face maps, feature vectors, depth data, or biometric identifiers are generated
 
 You can use HoldIt without granting camera access, but the reaction detection gameplay feature will not be available.
 
@@ -175,8 +191,8 @@ We may update this Privacy Policy from time to time. We will notify you of any s
 
 If you have questions about this Privacy Policy or want to request data deletion, contact us at:
 
-**Email:** [YOUR_EMAIL_HERE]
-**Website:** [YOUR_WEBSITE_HERE]
+**Email:** ahmed.agoummadane@gmail.com
+**Website:** https://agmtechnology.github.io/holdit-legal/support
 
 ---
 
